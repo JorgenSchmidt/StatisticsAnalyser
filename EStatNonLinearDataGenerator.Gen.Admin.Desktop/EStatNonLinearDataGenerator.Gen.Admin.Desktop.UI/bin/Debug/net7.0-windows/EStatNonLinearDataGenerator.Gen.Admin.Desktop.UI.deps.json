@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "EStatNonLinearDataGenerator.Gen.Admin.Desktop.UI/1.0.0": {
+        "dependencies": {
+          "EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core": "1.0.0",
+          "EStatNonLinearDataGenerator.Gen.Admin.Desktop.Model": "1.0.0"
+        },
+        "runtime": {
+          "EStatNonLinearDataGenerator.Gen.Admin.Desktop.UI.dll": {}
+        }
+      },
+      "EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core/1.0.0": {
+        "runtime": {
+          "EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core.dll": {}
+        }
+      },
+      "EStatNonLinearDataGenerator.Gen.Admin.Desktop.Model/1.0.0": {
+        "dependencies": {
+          "EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core": "1.0.0"
+        },
+        "runtime": {
+          "EStatNonLinearDataGenerator.Gen.Admin.Desktop.Model.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EStatNonLinearDataGenerator.Gen.Admin.Desktop.UI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EStatNonLinearDataGenerator.Gen.Admin.Desktop.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

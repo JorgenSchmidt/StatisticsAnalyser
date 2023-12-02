@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core.csproj" />
+    <ProjectReference Include="..\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Model\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Model.csproj" />
+  </ItemGroup>
+
+</Project>

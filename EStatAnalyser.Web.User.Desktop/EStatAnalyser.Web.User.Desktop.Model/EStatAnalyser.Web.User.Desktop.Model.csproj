@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="MathService\" />
+    <Folder Include="FileService\" />
+    <Folder Include="GraphicsShell\" />
+    <Folder Include="ReportService\" />
+    <Folder Include="MessageService\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="7.0.2" />
+    <PackageReference Include="itext7" Version="7.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <HintPath>..\..\..\..\cslibs\presentationcore.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,14 @@
+D:\codes\C#\StatisticsAnalyser\EStatNonLinearDataGenerator.Gen.Admin.Desktop\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core\bin\Debug\net7.0\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core.deps.json
+D:\codes\C#\StatisticsAnalyser\EStatNonLinearDataGenerator.Gen.Admin.Desktop\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core\bin\Debug\net7.0\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core.dll
+D:\codes\C#\StatisticsAnalyser\EStatNonLinearDataGenerator.Gen.Admin.Desktop\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core\bin\Debug\net7.0\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core.pdb
+D:\codes\C#\StatisticsAnalyser\EStatNonLinearDataGenerator.Gen.Admin.Desktop\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core\obj\Debug\net7.0\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core.csproj.AssemblyReference.cache
+D:\codes\C#\StatisticsAnalyser\EStatNonLinearDataGenerator.Gen.Admin.Desktop\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core\obj\Debug\net7.0\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\codes\C#\StatisticsAnalyser\EStatNonLinearDataGenerator.Gen.Admin.Desktop\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core\obj\Debug\net7.0\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core.AssemblyInfoInputs.cache
+D:\codes\C#\StatisticsAnalyser\EStatNonLinearDataGenerator.Gen.Admin.Desktop\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core\obj\Debug\net7.0\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core.AssemblyInfo.cs
+D:\codes\C#\StatisticsAnalyser\EStatNonLinearDataGenerator.Gen.Admin.Desktop\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core\obj\Debug\net7.0\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core.csproj.CoreCompileInputs.cache
+D:\codes\C#\StatisticsAnalyser\EStatNonLinearDataGenerator.Gen.Admin.Desktop\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core\obj\Debug\net7.0\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core.dll
+D:\codes\C#\StatisticsAnalyser\EStatNonLinearDataGenerator.Gen.Admin.Desktop\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core\obj\Debug\net7.0\refint\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core.dll
+D:\codes\C#\StatisticsAnalyser\EStatNonLinearDataGenerator.Gen.Admin.Desktop\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core\obj\Debug\net7.0\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core.pdb
+D:\codes\C#\StatisticsAnalyser\EStatNonLinearDataGenerator.Gen.Admin.Desktop\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core\obj\Debug\net7.0\ref\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core.dll
+D:\codes\C#\StatisticsAnalyser\EStatNonLinearDataGenerator.Gen.Admin.Desktop\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core\bin\Debug\net7.0\presentationcore.dll
+D:\codes\C#\StatisticsAnalyser\EStatNonLinearDataGenerator.Gen.Admin.Desktop\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core\obj\Debug\net7.0\EStatNonLinearDataGenerator.Gen.Admin.Desktop.Core.csproj.CopyComplete

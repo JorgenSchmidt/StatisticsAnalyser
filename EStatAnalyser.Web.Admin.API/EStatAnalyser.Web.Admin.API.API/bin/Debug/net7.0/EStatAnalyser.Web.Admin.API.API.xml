@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EStatAnalyser.Web.Admin.API.API</name>
+    </assembly>
+    <members>
+        <member name="M:EStatAnalyser.Web.Admin.API.API.Controllers.StatDataController.GetAll">
+             <summary>
+             Получает список имеющихся в базе данных записей из таблицы DATAS без включения ассоциированных с ней записей из VALUES
+             </summary>
+             <param name="Id">Идентификатор пользователя</param>
+             <returns>Возвращает пользователя</returns>
+             <remarks>
+             Пример запроса:
+            
+                 https://localhost:44387/api/StatData/get-all
+            
+             </remarks>
+             <response code="200">Возвращает найденного пользователя</response>
+             <response code="400">Неправильно введена форма для запроса</response>
+             <response code="500">Ошибка сервера</response>
+        </member>
+    </members>
+</doc>
