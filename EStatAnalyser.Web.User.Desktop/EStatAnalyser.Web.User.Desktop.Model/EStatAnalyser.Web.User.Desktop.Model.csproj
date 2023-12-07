@@ -1,22 +1,26 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="MathService\" />
-    <Folder Include="FileService\" />
     <Folder Include="GraphicsShell\" />
     <Folder Include="ReportService\" />
-    <Folder Include="MessageService\" />
+    <Folder Include="SearchService\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="EPPlus" Version="7.0.2" />
     <PackageReference Include="itext7" Version="7.2.5" />
+    <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EStatAnalyser.Web.User.Desktop.Core\EStatAnalyser.Web.User.Desktop.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

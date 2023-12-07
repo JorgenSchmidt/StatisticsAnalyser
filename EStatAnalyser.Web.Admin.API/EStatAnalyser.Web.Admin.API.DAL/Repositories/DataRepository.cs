@@ -36,8 +36,7 @@ namespace EStatAnalyser.Web.Admin.API.DAL.Repositories
         {
             // Так как требуется прогрузка всех ассоциированных элементов, LL будет включён
             _dbcontext.ChangeTracker.LazyLoadingEnabled = true;
-            var Entity = await _dbcontext.Set<Data>()
-                .FirstOrDefaultAsync(x => x.Id == Id);
+            var Entity = await _dbcontext.Set<Data>().FirstOrDefaultAsync(x => x.Id == Id);
 
             return Entity;
         }
@@ -66,6 +65,7 @@ namespace EStatAnalyser.Web.Admin.API.DAL.Repositories
                 var Data = new Data()
                 {
                     XFieldName = data.XFieldName,
+                    YFieldName = data.YFieldName,
                     DataType = data.DataType,
                     Description = data.Description,
                     Values = Related,

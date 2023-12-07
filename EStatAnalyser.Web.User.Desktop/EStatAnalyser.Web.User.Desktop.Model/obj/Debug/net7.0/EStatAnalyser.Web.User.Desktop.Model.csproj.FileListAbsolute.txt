@@ -12,3 +12,5 @@ D:\codes\C#\StatisticsAnalyser\EStatAnalyser.Web.User.Desktop\EStatAnalyser.Web.
 D:\codes\C#\StatisticsAnalyser\EStatAnalyser.Web.User.Desktop\EStatAnalyser.Web.User.Desktop.Model\obj\Debug\net7.0\refint\EStatAnalyser.Web.User.Desktop.Model.dll
 D:\codes\C#\StatisticsAnalyser\EStatAnalyser.Web.User.Desktop\EStatAnalyser.Web.User.Desktop.Model\obj\Debug\net7.0\EStatAnalyser.Web.User.Desktop.Model.pdb
 D:\codes\C#\StatisticsAnalyser\EStatAnalyser.Web.User.Desktop\EStatAnalyser.Web.User.Desktop.Model\obj\Debug\net7.0\ref\EStatAnalyser.Web.User.Desktop.Model.dll
+D:\codes\C#\StatisticsAnalyser\EStatAnalyser.Web.User.Desktop\EStatAnalyser.Web.User.Desktop.Model\bin\Debug\net7.0\EStatAnalyser.Web.User.Desktop.Core.dll
+D:\codes\C#\StatisticsAnalyser\EStatAnalyser.Web.User.Desktop\EStatAnalyser.Web.User.Desktop.Model\bin\Debug\net7.0\EStatAnalyser.Web.User.Desktop.Core.pdb

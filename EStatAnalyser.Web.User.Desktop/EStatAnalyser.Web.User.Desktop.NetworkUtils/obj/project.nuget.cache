@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "XrRuw40CQXoPOocCfcDaMgDMiw4bW1RwNJeOkv5fO17uHVp8eO7WsCBWXn82FW6lgrjap5mATXSmnC+iW2V+GQ==",
+  "dgSpecHash": "rl9mRGbRbwBACpMnkeMM9PmiCxcP6qH3+XXuRZIdAE3XOfSGoYyONDjuRMXA0AMPtI5Edm3ecoAVSUI8NKcKHA==",
   "success": true,
   "projectFilePath": "D:\\codes\\C#\\StatisticsAnalyser\\EStatAnalyser.Web.User.Desktop\\EStatAnalyser.Web.User.Desktop.NetworkUtils\\EStatAnalyser.Web.User.Desktop.NetworkUtils.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Joe\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -7,11 +7,35 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\DataAnalysisWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DataViews\DataBaseOperatorWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DataViews\OpenSimpleDataWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DataViews\OpenUploadingWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\EntryWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Views\DataAnalysisWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DataViews\DataBaseOperatorWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DataViews\OpenSimpleDataWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DataViews\OpenUploadingWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\EntryWindow.xaml">
       <SubType>Designer</SubType>
     </Page>

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 D:\codes\C#\StatisticsAnalyser\EStatAnalyser.Web.User.Desktop\EStatAnalyser.Web.User.Desktop.UI\App.xaml
-1992433943
+5-1614632517
 
-5-2125889790
-198-1175457984
-Views\EntryWindow.xaml;
+16-102678622
+2361298649620
+Views\DataAnalysisWindow.xaml;Views\DataViews\DataBaseOperatorWindow.xaml;Views\DataViews\OpenSimpleDataWindow.xaml;Views\DataViews\OpenUploadingWindow.xaml;Views\EntryWindow.xaml;
 
 False
 

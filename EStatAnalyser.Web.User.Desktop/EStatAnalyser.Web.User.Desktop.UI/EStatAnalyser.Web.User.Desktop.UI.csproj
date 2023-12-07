@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
+    <ProjectReference Include="..\EStatAnalyser.Web.User.Desktop.Core\EStatAnalyser.Web.User.Desktop.Core.csproj" />
+    <ProjectReference Include="..\EStatAnalyser.Web.User.Desktop.Model\EStatAnalyser.Web.User.Desktop.Model.csproj" />
+    <ProjectReference Include="..\EStatAnalyser.Web.User.Desktop.NetworkUtils\EStatAnalyser.Web.User.Desktop.NetworkUtils.csproj" />
   </ItemGroup>
 
 </Project>

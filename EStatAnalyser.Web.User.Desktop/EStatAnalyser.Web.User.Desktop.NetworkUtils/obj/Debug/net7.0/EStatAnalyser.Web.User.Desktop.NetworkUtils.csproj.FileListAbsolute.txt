@@ -10,3 +10,7 @@ D:\codes\C#\StatisticsAnalyser\EStatAnalyser.Web.User.Desktop\EStatAnalyser.Web.
 D:\codes\C#\StatisticsAnalyser\EStatAnalyser.Web.User.Desktop\EStatAnalyser.Web.User.Desktop.NetworkUtils\obj\Debug\net7.0\refint\EStatAnalyser.Web.User.Desktop.NetworkUtils.dll
 D:\codes\C#\StatisticsAnalyser\EStatAnalyser.Web.User.Desktop\EStatAnalyser.Web.User.Desktop.NetworkUtils\obj\Debug\net7.0\EStatAnalyser.Web.User.Desktop.NetworkUtils.pdb
 D:\codes\C#\StatisticsAnalyser\EStatAnalyser.Web.User.Desktop\EStatAnalyser.Web.User.Desktop.NetworkUtils\obj\Debug\net7.0\ref\EStatAnalyser.Web.User.Desktop.NetworkUtils.dll
+D:\codes\C#\StatisticsAnalyser\EStatAnalyser.Web.User.Desktop\EStatAnalyser.Web.User.Desktop.NetworkUtils\bin\Debug\net7.0\EStatAnalyser.Web.User.Desktop.Core.dll
+D:\codes\C#\StatisticsAnalyser\EStatAnalyser.Web.User.Desktop\EStatAnalyser.Web.User.Desktop.NetworkUtils\bin\Debug\net7.0\PresentationCore.dll
+D:\codes\C#\StatisticsAnalyser\EStatAnalyser.Web.User.Desktop\EStatAnalyser.Web.User.Desktop.NetworkUtils\bin\Debug\net7.0\EStatAnalyser.Web.User.Desktop.Core.pdb
+D:\codes\C#\StatisticsAnalyser\EStatAnalyser.Web.User.Desktop\EStatAnalyser.Web.User.Desktop.NetworkUtils\obj\Debug\net7.0\EStatAnalyser.Web.User.Desktop.NetworkUtils.csproj.CopyComplete

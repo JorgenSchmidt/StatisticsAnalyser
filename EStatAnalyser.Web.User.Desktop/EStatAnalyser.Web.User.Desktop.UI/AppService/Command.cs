@@ -3,7 +3,7 @@ using System;
 
 namespace EStatAnalyser.Web.User.Desktop.UI.AppService
 {
-    public class Command
+    public class Command : ICommand
     {
         private Action<object> execute;
         private Func<object, bool> canExecute;

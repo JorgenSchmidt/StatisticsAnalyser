@@ -3,6 +3,7 @@ using EStatAnalyser.Web.Admin.API.Core.Enums;
 using EStatAnalyser.Web.Admin.API.Core.Interfaces.RepositoryInterfaces;
 using EStatAnalyser.Web.Admin.API.Core.Interfaces.ServiceInterfaces;
 using EStatAnalyser.Web.Admin.API.Core.Responses;
+using EStatAnalyser.Web.Admin.API.DAL;
 using Microsoft.Extensions.Logging;
 
 namespace EStatAnalyser.Web.Admin.API.Services.Services
@@ -59,8 +60,8 @@ namespace EStatAnalyser.Web.Admin.API.Services.Services
         {
             try
             {
-                var Result = _dataRepository.GetByID(Id);
-                if (Result == null)
+                var Query = await _dataRepository.GetByID(Id);
+                if (Query == null)
                 {
                     _logger.LogInformation("\n(INCORR) - GetByID: Data was null.");
                     return new BaseResponse
@@ -69,6 +70,29 @@ namespace EStatAnalyser.Web.Admin.API.Services.Services
                         Status = StatusCodes.IncorrectRequest
                     };
                 }
+
+                var Values = new List<Value>();
+                foreach (var item in Query.Values)
+                {
+                    var Value = new Value()
+                    {
+                        Id = item.Id,
+                        X = item.X,
+                        Y = item.Y,
+                        DataId = item.DataId,
+                    };
+                    Values.Add(Value);
+                }
+                var Result = new Data()
+                {
+                    Id = Query.Id,
+                    XFieldName = Query.XFieldName,
+                    YFieldName = Query.YFieldName,
+                    DataType = Query.DataType,
+                    Description = Query.Description,
+                    WasAnalysed = Query.WasAnalysed,
+                    Values = Values,
+                };
 
                 _logger.LogInformation("\n(OK) - GetByID.");
                 return new BaseResponse
