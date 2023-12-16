@@ -2,6 +2,7 @@
 using EStatAnalyser.Web.User.Desktop.Core.Entities.DataEntities;
 using EStatAnalyser.Web.User.Desktop.Model.ConverterService;
 using EStatAnalyser.Web.User.Desktop.Model.FileService;
+using EStatAnalyser.Web.User.Desktop.Model.MathService;
 using EStatAnalyser.Web.User.Desktop.NetworkUtils.Converters;
 using EStatAnalyser.Web.User.Desktop.NetworkUtils.Requests;
 using EStatAnalyser.Web.User.Desktop.UI.AppService;
@@ -119,7 +120,9 @@ namespace EStatAnalyser.Web.User.Desktop.UI.ViewModels.DataViews
                             }
 
                             var CurrentUploadData = Converters.ConvertContentToUploadData(CurrentContentData);
-                            AppData.AnalysisData = CurrentUploadData;
+                            AppData.AnalysisData = Converters.CopyUploadData(CurrentUploadData);
+                            AppData.RewriteAnalysisData = Converters.CopyUploadData(CurrentUploadData);
+                            AppData.DescriptionStatistics = StatisticsOperation.GetDescriptionStatistics(AppData.RewriteAnalysisData.Values);
 
                             WindowsObjects.DataAnalysisWindow = new();
                             if (WindowsObjects.DataAnalysisWindow.ShowDialog() == true)

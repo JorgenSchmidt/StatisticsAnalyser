@@ -10,8 +10,15 @@ namespace EStatAnalyser.Web.User.Desktop.Core.Configuration
         public static readonly int ExternalCanvasWidth = 550;
         public static readonly int ExternalCanvasHeight = 550;
 
+        // Количество точек для построения линии тренда
+        public static readonly int TrendPointCount = 20;
+
+        // Количество подписей для координатной оси
+        public static readonly int XLabelCount = 10;
+        public static readonly int YLabelCount = 10;
+
         // Конфигурация точек
-        public static readonly int PointRadius = 4;
+        public static readonly int PointRadius = 5;
         public static readonly int PointThickness = 1;
         public static readonly SolidColorBrush PointColor = Brushes.Red;
 
@@ -20,5 +27,7 @@ namespace EStatAnalyser.Web.User.Desktop.Core.Configuration
 
         // Конфигурация линий
         public static readonly int LineStrokeThickness = 1;
+        public static readonly SolidColorBrush RegressionLinesColor = Brushes.Red;
+        public static readonly SolidColorBrush TrustLinesColor = Brushes.Gray;
     }
 }

@@ -1,4 +1,6 @@
-﻿using EStatAnalyser.Web.User.Desktop.Core.Entities.DataEntities;
+﻿using EStatAnalyser.Web.User.Desktop.Core.Configuration;
+using EStatAnalyser.Web.User.Desktop.Core.Entities.DataEntities;
+using EStatAnalyser.Web.User.Desktop.Core.Entities.GraphicsShellEntities;
 using EStatAnalyser.Web.User.Desktop.Model.MessageService.MessageClasses;
 
 namespace EStatAnalyser.Web.User.Desktop.Model.ConverterService
@@ -149,6 +151,30 @@ namespace EStatAnalyser.Web.User.Desktop.Model.ConverterService
                 return null;
             }
         }
+
+        public static UploadData CopyUploadData(UploadData data)
+        {
+            UploadData Result = new UploadData();
+            Result.Values = new List<SimpleData>();
+
+            Result.XFieldName = data.XFieldName;
+            Result.YFieldName = data.YFieldName;
+            Result.DataType = data.DataType;
+            Result.Description = data.Description;
+            Result.WasAnalysed = data.WasAnalysed;
+
+            if (data.Values != null)
+            {
+                foreach (var item in data.Values)
+                {
+                    Result.Values.Add(
+                        new SimpleData { Id = item.Id, X = item.X, Y = item.Y}    
+                    );
+                }
+            }
+
+            return Result;
+        }
         #endregion
 
         #region String
@@ -179,6 +205,34 @@ namespace EStatAnalyser.Web.User.Desktop.Model.ConverterService
             }
         }
 
+        public static string ConvertDescritpionStatisticsToString(DescriptionStatistics data)
+        {
+            string Result = "";
+
+            Result += "X_MIN: " + Math.Round(data.X_min, 1) + "; X_MAX: " + Math.Round(data.X_max, 1) + "; X_AV: " + Math.Round(data.X_med, 1) + "\n";
+            Result += "Y_MIN: " + Math.Round(data.Y_min, 1) + "; Y_MAX: " + Math.Round(data.Y_max, 1) + "; Y_AV: " + Math.Round(data.Y_med, 1) + "\n";
+            Result += "Sx: " + Math.Round(data.Sx, 1) + "; Ax: " + Math.Round(data.Ax, 1) + "; Ex: " + Math.Round(data.Ex, 1) + "\n";
+            Result += "Sy: " + Math.Round(data.Sy, 1) + "; Ay: " + Math.Round(data.Ay, 1) + "; Ey: " + Math.Round(data.Ey, 1) + "\n";
+
+            return Result;
+        }
+
+        #endregion
+
+        #region GraphicsShell
+        public static List<SimpleData> ConvertSphereInfoToSimpleData(List<Sphere> data)
+        {
+            List<SimpleData> Result = new List<SimpleData>();
+
+            foreach (var item in data)
+            {
+                Result.Add(
+                    new SimpleData { X = item.X, Y = item.Y }    
+                );
+            }
+
+            return Result;
+        }
         #endregion
     }
 }

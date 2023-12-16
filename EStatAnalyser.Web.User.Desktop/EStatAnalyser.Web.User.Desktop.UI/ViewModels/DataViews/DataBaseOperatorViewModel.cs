@@ -1,4 +1,6 @@
 ﻿using EStatAnalyser.Web.User.Desktop.Core.Entities.DataEntities;
+using EStatAnalyser.Web.User.Desktop.Model.ConverterService;
+using EStatAnalyser.Web.User.Desktop.Model.MathService;
 using EStatAnalyser.Web.User.Desktop.NetworkUtils.Converters;
 using EStatAnalyser.Web.User.Desktop.NetworkUtils.Requests;
 using EStatAnalyser.Web.User.Desktop.UI.AppService;
@@ -114,7 +116,9 @@ namespace EStatAnalyser.Web.User.Desktop.UI.ViewModels.DataViews
                                 }
 
                                 var data = UploadDataConverter.ConvertJSONToUpload(request);
-                                AppData.AnalysisData = data;
+                                AppData.AnalysisData = Converters.CopyUploadData(data);
+                                AppData.RewriteAnalysisData = Converters.CopyUploadData(data);
+                                AppData.DescriptionStatistics = StatisticsOperation.GetDescriptionStatistics(AppData.RewriteAnalysisData.Values);
 
                                 RequestWasLaunched = false;
 

@@ -1,9 +1,15 @@
 ﻿using EStatAnalyser.Web.User.Desktop.Core.Configuration;
 using EStatAnalyser.Web.User.Desktop.Core.Entities.DataEntities;
 using EStatAnalyser.Web.User.Desktop.Core.Entities.GraphicsShellEntities;
+using EStatAnalyser.Web.User.Desktop.Model.ConverterService;
+using EStatAnalyser.Web.User.Desktop.Model.GraphicsShell;
+using EStatAnalyser.Web.User.Desktop.Model.MathService;
 using EStatAnalyser.Web.User.Desktop.UI.AppService;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
+using System.Windows.Media;
 
 namespace EStatAnalyser.Web.User.Desktop.UI.ViewModels
 {
@@ -67,7 +73,7 @@ namespace EStatAnalyser.Web.User.Desktop.UI.ViewModels
         {
             get
             {
-                return GraphicsShellConfiguration.ExternalCanvasWidth + GraphicsShellConfiguration.PointRadius + 2 + 30;
+                return GraphicsShellConfiguration.ExternalCanvasWidth + GraphicsShellConfiguration.PointRadius + 2 + 60;
             }
         }
 
@@ -83,11 +89,25 @@ namespace EStatAnalyser.Web.User.Desktop.UI.ViewModels
 
         #region Data
 
-        public List<Sphere> mainData;
+        //public List<SimpleData> data = new List<SimpleData>();
+
+        public List<Sphere> mainData = GraphicsSketchers.GetSpheres(AppData.RewriteAnalysisData.Values);
         public List<Sphere> MainData
         {
             get
             {
+                for (int c = 0; c < mainData.Count; c++)
+                {
+                    mainData[c].SphereMargin = ThicknessGetter.GetTranslatedCoords(
+                        mainData[c].X,
+                        mainData[c].Y,
+                        AppData.DescriptionStatistics.X_min,
+                        AppData.DescriptionStatistics.X_max,
+                        AppData.DescriptionStatistics.Y_min,
+                        AppData.DescriptionStatistics.Y_max
+                    );
+                }
+
                 return mainData;
             }
             set
@@ -97,10 +117,25 @@ namespace EStatAnalyser.Web.User.Desktop.UI.ViewModels
             }
         }
 
-        public List<TextLabel> labelData;
+        public List<TextLabel> labelData = GraphicsSketchers.GetLabels(
+                                                AppData.DescriptionStatistics.X_min,
+                                                AppData.DescriptionStatistics.X_max,
+                                                AppData.DescriptionStatistics.Y_min,
+                                                AppData.DescriptionStatistics.Y_max
+                                           );
         public List<TextLabel> LabelData
         {
-            get { return labelData; }
+            get 
+            {
+                for (int c = 0; c < labelData.Count; c++)
+                {
+                    labelData[c].LabelMargin = ThicknessGetter.GetCoords(
+                        labelData[c].X,
+                        labelData[c].Y
+                    );
+                }
+                return labelData; 
+            }
             set
             {
                 labelData = value;
@@ -108,7 +143,7 @@ namespace EStatAnalyser.Web.User.Desktop.UI.ViewModels
             }
         }
 
-        public List<Line> linesData;
+        public List<Line> linesData = new List<Line>();
         public List<Line> LinesData
         {
             get { return linesData; }
@@ -118,24 +153,11 @@ namespace EStatAnalyser.Web.User.Desktop.UI.ViewModels
                 CheckChanges();
             }
         }
-
-        public UploadData analysisData = AppData.AnalysisData;
-        public UploadData AnalysisData
-        {
-            get { return analysisData; }
-            set
-            {
-                analysisData = value;
-                CheckChanges();
-            }
-        }
-
-
         #endregion
 
         #region Diagram data
 
-        public string? xFieldName = AppData.AnalysisData.XFieldName;
+        public string? xFieldName = AppData.RewriteAnalysisData.XFieldName;
         public string? XFieldName
         {
             get { return xFieldName; }
@@ -146,7 +168,7 @@ namespace EStatAnalyser.Web.User.Desktop.UI.ViewModels
             }
         }
 
-        public string? yFieldName = AppData.AnalysisData.YFieldName;
+        public string? yFieldName = AppData.RewriteAnalysisData.YFieldName;
         public string? YFieldName
         {
             get { return yFieldName; }
@@ -161,7 +183,7 @@ namespace EStatAnalyser.Web.User.Desktop.UI.ViewModels
 
         #region Main 
 
-        public double thresholdZ;
+        public double thresholdZ = 3;
         public double ThresholdZ
         {
             get { return thresholdZ; }
@@ -179,7 +201,31 @@ namespace EStatAnalyser.Web.User.Desktop.UI.ViewModels
                 return new Command(
                     obj =>
                     {
+                        try
+                        {
+                            if (ThresholdZ <= 0)
+                            {
+                                MessageBox.Show("Пороговое значение не может быть меньше нуля или равняться ему.");
+                                return;
+                            }
 
+                            var list = Converters.ConvertSphereInfoToSimpleData(MainData);
+                            AppData.RewriteAnalysisData.Values.Clear();
+                            AppData.RewriteAnalysisData.Values = StatisticsOperation.GetZFilter(list, AppData.DescriptionStatistics, ThresholdZ);
+                            AppData.DescriptionStatistics = StatisticsOperation.GetDescriptionStatistics(AppData.RewriteAnalysisData.Values);
+                            MainData = GraphicsSketchers.GetSpheres(AppData.RewriteAnalysisData.Values);
+                            AnalysisResult = Converters.ConvertDescritpionStatisticsToString(AppData.DescriptionStatistics);
+                            LabelData = GraphicsSketchers.GetLabels(
+                                                    AppData.DescriptionStatistics.X_min,
+                                                    AppData.DescriptionStatistics.X_max,
+                                                    AppData.DescriptionStatistics.Y_min,
+                                                    AppData.DescriptionStatistics.Y_max
+                                               );
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Ошибка: \n", ex.Message);
+                        }
                     }    
                 );
             }
@@ -192,7 +238,23 @@ namespace EStatAnalyser.Web.User.Desktop.UI.ViewModels
                 return new Command(
                     obj =>
                     {
-
+                        try
+                        {
+                            AppData.RewriteAnalysisData = Converters.CopyUploadData(AppData.AnalysisData);
+                            AppData.DescriptionStatistics = StatisticsOperation.GetDescriptionStatistics(AppData.RewriteAnalysisData.Values);
+                            MainData = GraphicsSketchers.GetSpheres(AppData.RewriteAnalysisData.Values);
+                            AnalysisResult = Converters.ConvertDescritpionStatisticsToString(AppData.DescriptionStatistics);
+                            LabelData = GraphicsSketchers.GetLabels(
+                                                    AppData.DescriptionStatistics.X_min,
+                                                    AppData.DescriptionStatistics.X_max,
+                                                    AppData.DescriptionStatistics.Y_min,
+                                                    AppData.DescriptionStatistics.Y_max
+                                               );
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Ошибка: \n", ex.Message);
+                        }
                     }
                 );
             }
@@ -205,26 +267,15 @@ namespace EStatAnalyser.Web.User.Desktop.UI.ViewModels
                 return new Command(
                     obj =>
                     {
-
+                        /*var RegressionData = StatisticsOperation.GetRegressionData(MainData, AppData.DescriptionStatistics, 2.04);
+                        var Lines = GraphicsSketchers.GetRegressionLines(RegressionData, AppData.DescriptionStatistics);
+                        LinesData = Lines;*/
                     }
                 );
             }
         }
 
-        public Command DescStatistics
-        {
-            get
-            {
-                return new Command(
-                    obj =>
-                    {
-
-                    }
-                );
-            }
-        }
-
-        public string? analysisResult;
+        public string? analysisResult = Converters.ConvertDescritpionStatisticsToString(AppData.DescriptionStatistics);
         public string? AnalysisResult
         {
             get { return analysisResult; }
@@ -270,7 +321,7 @@ namespace EStatAnalyser.Web.User.Desktop.UI.ViewModels
                 return new Command(
                     obj =>
                     {
-                        var Content = AppData.AnalysisData.Description;
+                        var Content = "Help";
                         MessageBox.Show(Content);
                     }
                 );
@@ -284,12 +335,14 @@ namespace EStatAnalyser.Web.User.Desktop.UI.ViewModels
                 return new Command(
                     obj =>
                     {
-                        AppData.AnalysisData.Id = 0;
-                        AppData.AnalysisData.XFieldName = "";
-                        AppData.AnalysisData.YFieldName = "";
-                        AppData.AnalysisData.DataType = "";
-                        AppData.AnalysisData.Description = "";
-                        AppData.AnalysisData.Values.Clear();
+                        AppData.AnalysisData = null;
+                        AppData.AnalysisData = new UploadData();
+
+                        AppData.RewriteAnalysisData = null;
+                        AppData.RewriteAnalysisData = new UploadData();
+
+                        AppData.DescriptionStatistics = null;
+                        AppData.DescriptionStatistics = new DescriptionStatistics();
 
                         WindowsObjects.DataAnalysisWindow.Close();
                         WindowsObjects.DataAnalysisWindow = null;

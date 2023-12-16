@@ -5,11 +5,11 @@ namespace EStatAnalyser.Web.User.Desktop.Core.Entities.GraphicsShellEntities
 {
     public class Sphere
     {
-        public int X { get; set; }
-        public int Y { get; set; }
+        public double X { get; set; }
+        public double Y { get; set; }
 
         // Параметры графической составляющей, используемой при отображении UI
-        public object SphereMargin { get; set; } // Отвечает за местоположение объекта на plot'е
+        public object? SphereMargin { get; set; } // Отвечает за местоположение объекта на plot'е
 
         // Радиус точки
         public int Radius

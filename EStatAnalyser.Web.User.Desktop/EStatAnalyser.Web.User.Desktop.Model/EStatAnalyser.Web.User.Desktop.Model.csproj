@@ -7,8 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="MathService\" />
-    <Folder Include="GraphicsShell\" />
     <Folder Include="ReportService\" />
     <Folder Include="SearchService\" />
   </ItemGroup>
